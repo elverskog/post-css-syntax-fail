@@ -1,0 +1,43 @@
+{
+  "name": "Post CSS Syntax Fail",
+  "version": "1.0.0",
+  "description": "A small example to test CSS syntax errors in VS Code",
+  "main": "server.js",
+  "scripts": {
+    "build": "rimraf dist && npm run build:server && npm run build:client",
+    "build:client": "cross-env NODE_ENV=production vite build",
+    "build:server": "cross-env NODE_ENV=production vite build --ssr src/index.js",
+    "dev": "node --enable-source-maps server.js",
+    "dev:inspect": "node --inspect --enable-source-maps index.js",
+    "start": "cross-env NODE_ENV=production node --enable-source-maps server.js"
+  },
+  "author": "Erik Elverskog",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fastify/compress": "^6.1.0",
+    "@fastify/static": "^6.4.1",
+    "@marko/fastify": "^1.1.1",
+    "events": "^3.3.0",
+    "fastify": "^4.7.0",
+    "fastify-plugin": "^4.2.1",
+    "firebase": "^9.11.0"
+  },
+  "devDependencies": {
+    "@marko/compiler": "^5.22.8",
+    "@marko/vite": "^2.3.9",
+    "cross-env": "^7.0.3",
+    "postcss-load-config": "^4.0.1",
+    "postcss-nesting": "^10.2.0",
+    "postcss-plugin": "^1.0.0",
+    "session-file-store": "^1.5.0",
+    "vite": "^3.1.6"
+  },
+  "postcss": {
+    "map": false,
+    "plugins": {
+      "postcss-plugin": {},
+      "postcss-nesting": {}
+    }
+  },
+  "type": "module"
+}
