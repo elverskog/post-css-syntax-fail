@@ -2,14 +2,9 @@ import fastify from "fastify";
 import zlib from "zlib";
 import path from "path";
 import markoPlugin from "@marko/fastify";
-import fastifySession from "@fastify/session";
-import fastifyCookie from "@fastify/cookie";
-import fastifyFormbody from "@fastify/formbody";
-import SessionFileStore from "session-file-store";
 export const app = fastify();
 
 app.register(markoPlugin);
-app.register(fastifyFormbody);
 
 //register/configure prod specific plugins
 if (process.env.NODE_ENV === "production") {
